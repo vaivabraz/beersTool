@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,kBAAkB,CAAC;EACjB,OAAO,EAAE,MAAM;CAIhB;;AALD,AAEE,kBAFgB,CAEhB,EAAE,CAAC;EACD,UAAU,EAAE,MAAM;CACnB",
+    "sources": [
+        "BeerAccordion.scss"
+    ],
+    "names": [],
+    "file": "BeerAccordion.css"
+}

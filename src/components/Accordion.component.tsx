@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { AccordionItem } from "./AccordionItem.component";
 import "./Styles/Accordion.css";
 
-type AccordionType = {
-  data: AccordionItemType[];
+type AccordionType<DataType> = {
+  data: DataType[];
+  bodyComponent?: (data: any) => JSX.Element;
   singleItemExpanded?: boolean;
   defaultExpanded?: boolean;
   disabled?: boolean;
@@ -12,24 +13,24 @@ type AccordionType = {
    * outside of the component
    */
   controlSections?: { expand: boolean; updateAt: string | undefined };
-  onChange?: () => void;
 };
 
-type AccordionItemType = {
-  id: string;
-  title: string;
+type BasicAccordionItemType = {
+  id: number;
+  name: string;
   description: string;
 };
 
-export const Accordion = ({
+export function Accordion<T extends BasicAccordionItemType>({
   data,
   singleItemExpanded = false,
   defaultExpanded,
   disabled,
   controlSections,
-}: AccordionType) => {
+  bodyComponent,
+}: AccordionType<T>) {
   const getAllSectionsList = () => {
-    return defaultExpanded ? data.map((i) => i.title) : [];
+    return defaultExpanded ? data.map((i) => i.name) : [];
   };
   const [openSections, setOpenSections] =
     useState<string[]>(getAllSectionsList);
@@ -66,14 +67,16 @@ export const Accordion = ({
   return (
     <div className="Accordion">
       {data.map((i) => (
-        <AccordionItem
+        <AccordionItem<T>
           key={i.id}
-          sectionName={i.title}
-          description={i.description}
+          sectionName={i.name}
+          sectionBodyText={i.description}
+          data={i}
+          SectionBodyComponent={bodyComponent}
           onSelect={handleOnSelect}
-          expanded={openSections.indexOf(i.title) !== -1}
+          expanded={openSections.indexOf(i.name) !== -1}
         />
       ))}
     </div>
   );
-};
+}

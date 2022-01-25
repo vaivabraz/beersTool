@@ -46,7 +46,7 @@
 
 .AccordionItemDescription {
   max-height: 0px;
-  overflow: hidden;
+  overflow: auto;
   background-color: #f9f6f0;
   -webkit-transition: max-height 1s;
   transition: max-height 1s;
@@ -57,6 +57,6 @@
 }
 
 .AccordionItemDescription.active {
-  max-height: 90px;
+  max-height: 300px;
 }
 /*# sourceMappingURL=Accordion.css.map */

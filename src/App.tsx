@@ -1,9 +1,9 @@
-import { PageForAccordion } from "./components/PageForAccordion.component";
+import { BeersAccordion } from "./pages";
 
 export const App = () => {
   return (
     <div>
-      <PageForAccordion />
+      <BeersAccordion />
     </div>
   );
 };

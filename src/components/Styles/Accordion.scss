@@ -38,7 +38,7 @@ $background2: #ece2d5;
 
 .AccordionItemDescription {
   max-height: 0px;
-  overflow: hidden;
+  overflow: auto;
   background-color: $background;
   transition: max-height 1s;
 
@@ -48,5 +48,5 @@ $background2: #ece2d5;
 }
 
 .AccordionItemDescription.active {
-  max-height: 90px;
+  max-height: 300px;
 }

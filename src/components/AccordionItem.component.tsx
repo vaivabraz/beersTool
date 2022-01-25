@@ -1,23 +1,31 @@
 import Arrow from "./arrow-down.svg";
-
 import "./Styles/Accordion.css";
 
-type AccordionItemType = {
+type AccordionItemType<DataType> = {
   sectionName: string;
-  description: string;
+  sectionBodyText?: string;
   expanded: boolean;
   onSelect: (sectionName: string) => void;
+  SectionBodyComponent?: any;
+  data?: DataType;
 };
 
-export const AccordionItem = ({
+//TODO: define available pairs of properties: SectionBodyComponent must be used with data prop,
+// sectionBodyText can not be used with SectionBodyComponent
+//TODO: SectionBodyComponent don't have a correct type
+
+export function AccordionItem<T>({
   sectionName,
-  description,
+  sectionBodyText,
   expanded,
   onSelect,
-}: AccordionItemType) => {
+  SectionBodyComponent,
+  data,
+}: AccordionItemType<T>) {
   const handleOnSelect = () => {
     onSelect(sectionName);
   };
+
   return (
     <div className="AccordionItem">
       <button
@@ -29,8 +37,12 @@ export const AccordionItem = ({
       </button>
 
       <div className={`AccordionItemDescription ${expanded ? "active" : ""}`}>
-        <div className="descriptionContent">{description}</div>
+        {SectionBodyComponent ? (
+          <SectionBodyComponent data={data} />
+        ) : (
+          <div className="descriptionContent">{sectionBodyText}</div>
+        )}
       </div>
     </div>
   );
-};
+}
