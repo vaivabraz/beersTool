@@ -10,7 +10,7 @@ type AccordionType = {
   onChange?: () => void;
 };
 
-export const Accordion = ({}: AccordionType) => {
+export const Accordion = ({ singleItemExpanded = false }: AccordionType) => {
   const data = [
     { id: "1", title: "First", description: "asdasdasd so aweso mmksndf" },
     {
@@ -25,14 +25,23 @@ export const Accordion = ({}: AccordionType) => {
   const [openSections, setOpenSections] = useState<string[]>([]);
 
   const handleOnSelect = (sectionName: string) => {
-    let newArr = [...openSections];
-    const currentIndex = newArr.indexOf(sectionName);
-    if (currentIndex !== -1) {
-      newArr.splice(currentIndex, 1);
-    } else {
-      newArr.push(sectionName);
+    const currentIndex = openSections.indexOf(sectionName);
+    if (singleItemExpanded) {
+      if (currentIndex !== -1) {
+        setOpenSections([]);
+      } else {
+        setOpenSections([sectionName]);
+      }
+      return;
     }
-    setOpenSections(newArr);
+
+    const newOpenSections = [...openSections];
+    if (currentIndex !== -1) {
+      newOpenSections.splice(currentIndex, 1);
+    } else {
+      newOpenSections.push(sectionName);
+    }
+    setOpenSections(newOpenSections);
   };
 
   return (
