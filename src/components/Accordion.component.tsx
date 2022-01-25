@@ -1,30 +1,49 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AccordionItem } from "./AccordionItem.component";
 import "./Styles/Accordion.css";
 
 type AccordionType = {
+  data: AccordionItemType[];
   singleItemExpanded?: boolean;
   defaultExpanded?: boolean;
   disabled?: boolean;
-  expanded?: boolean;
+  /**
+   * Allows to expand or collapse accordion sections from
+   * outside of the component
+   */
+  controlSections?: { expand: boolean; updateAt: string | undefined };
   onChange?: () => void;
 };
 
-export const Accordion = ({ singleItemExpanded = false }: AccordionType) => {
-  const data = [
-    { id: "1", title: "First", description: "asdasdasd so aweso mmksndf" },
-    {
-      id: "2",
-      title: "Second",
-      description:
-        "asdasdasd so aweso so mmksndf  aweso mmksndf  mmksndf aweso mmksndf  aweso mmksndf  aweso mmksndf  so mmksndf  aweso mmksndf so mmksndf  aweso mmksndf ",
-    },
-    { id: "3", title: "Third", description: "asdasdasd so aweso mmksndf " },
-  ];
+type AccordionItemType = {
+  id: string;
+  title: string;
+  description: string;
+};
 
-  const [openSections, setOpenSections] = useState<string[]>([]);
+export const Accordion = ({
+  data,
+  singleItemExpanded = false,
+  defaultExpanded,
+  disabled,
+  controlSections,
+}: AccordionType) => {
+  const getAllSectionsList = () => {
+    return defaultExpanded ? data.map((i) => i.title) : [];
+  };
+  const [openSections, setOpenSections] =
+    useState<string[]>(getAllSectionsList);
+
+  useEffect(() => {
+    if (controlSections?.expand) {
+      setOpenSections(getAllSectionsList());
+    } else {
+      setOpenSections([]);
+    }
+  }, [controlSections?.updateAt]);
 
   const handleOnSelect = (sectionName: string) => {
+    if (disabled) return;
     const currentIndex = openSections.indexOf(sectionName);
     if (singleItemExpanded) {
       if (currentIndex !== -1) {

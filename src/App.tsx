@@ -1,9 +1,9 @@
-import { Accordion } from "./components/Accordion.component";
+import { PageForAccordion } from "./components/PageForAccordion.component";
 
 export const App = () => {
   return (
     <div>
-      <Accordion />
+      <PageForAccordion />
     </div>
   );
 };
