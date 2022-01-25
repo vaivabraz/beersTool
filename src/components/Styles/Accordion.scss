@@ -1,0 +1,52 @@
+$active: #e2c5b2;
+$border: #d7c4b1;
+$background: #f9f6f0;
+$background2: #ece2d5;
+
+.Accordion {
+  max-width: 600px;
+}
+
+.AccordionItemHeader {
+  background-color: $background2;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  border: none;
+  border-top: 1px solid $border;
+  width: 100%;
+  padding: 12px;
+  img {
+    transition: transform 0.8s cubic-bezier(0, 0, 0, 0.78);
+    height: 20px;
+    transform: rotate(90deg);
+  }
+}
+
+.AccordionItemHeader:hover {
+  background-color: $active;
+}
+
+.AccordionItemHeader.active {
+  background-color: $active;
+  img {
+    transform: rotate(-720deg);
+  }
+}
+
+.AccordionItemDescription {
+  max-height: 0px;
+  overflow: hidden;
+  background-color: $background;
+  transition: max-height 1s;
+
+  .descriptionContent {
+    padding: 12px;
+  }
+}
+
+.AccordionItemDescription.active {
+  max-height: 90px;
+}
