@@ -1,27 +1,34 @@
-import { useState } from "react";
 import Arrow from "./arrow-down.svg";
 
 import "./Styles/Accordion.css";
 
 type AccordionItemType = {
-  title: string;
+  sectionName: string;
   description: string;
+  expanded: boolean;
+  onSelect: (sectionName: string) => void;
 };
 
-export const AccordionItem = ({ title, description }: AccordionItemType) => {
-  const [isItemOpen, setIsItemOpen] = useState(false);
-
+export const AccordionItem = ({
+  sectionName,
+  description,
+  expanded,
+  onSelect,
+}: AccordionItemType) => {
+  const handleOnSelect = () => {
+    onSelect(sectionName);
+  };
   return (
     <div className="AccordionItem">
       <button
-        className={`AccordionItemHeader ${isItemOpen ? "active" : ""}`}
-        onClick={() => setIsItemOpen((val) => !val)}
+        className={`AccordionItemHeader ${expanded ? "active" : ""}`}
+        onClick={handleOnSelect}
       >
-        <h3>{title}</h3>
+        <h3>{sectionName}</h3>
         <img src={Arrow} alt={"text"} />
       </button>
 
-      <div className={`AccordionItemDescription ${isItemOpen ? "active" : ""}`}>
+      <div className={`AccordionItemDescription ${expanded ? "active" : ""}`}>
         <div className="descriptionContent">{description}</div>
       </div>
     </div>
