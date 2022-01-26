@@ -5,30 +5,19 @@
 .AccordionItemHeader {
   background-color: #ece2d5;
   height: 60px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   border: none;
   border: none;
   border-top: 1px solid #d7c4b1;
   width: 100%;
   padding: 12px;
 }
-
 .AccordionItemHeader img {
-  -webkit-transition: -webkit-transform 0.8s cubic-bezier(0, 0, 0, 0.78);
-  transition: -webkit-transform 0.8s cubic-bezier(0, 0, 0, 0.78);
   transition: transform 0.8s cubic-bezier(0, 0, 0, 0.78);
-  transition: transform 0.8s cubic-bezier(0, 0, 0, 0.78), -webkit-transform 0.8s cubic-bezier(0, 0, 0, 0.78);
   height: 20px;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .AccordionItemHeader:hover {
@@ -38,20 +27,16 @@
 .AccordionItemHeader.active {
   background-color: #e2c5b2;
 }
-
 .AccordionItemHeader.active img {
-  -webkit-transform: rotate(-720deg);
-          transform: rotate(-720deg);
+  transform: rotate(-720deg);
 }
 
 .AccordionItemDescription {
   max-height: 0px;
   overflow: auto;
   background-color: #f9f6f0;
-  -webkit-transition: max-height 1s;
   transition: max-height 1s;
 }
-
 .AccordionItemDescription .descriptionContent {
   padding: 12px;
 }
@@ -59,4 +44,5 @@
 .AccordionItemDescription.active {
   max-height: 300px;
 }
+
 /*# sourceMappingURL=Accordion.css.map */
