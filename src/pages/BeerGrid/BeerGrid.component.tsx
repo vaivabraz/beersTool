@@ -1,10 +1,10 @@
 import { useQuery } from "react-query";
 import { Grid } from "../../components";
-import { BeerType, getBeers } from "../../services";
+import { BeerType, getBeers, reactQueryKeys } from "../../services";
 import { GridComponent } from "./GridComponent.component";
 
 export const BeerGrid = () => {
-  const { isLoading, data } = useQuery("beers", getBeers);
+  const { isLoading, data } = useQuery(reactQueryKeys.beersList, getBeers);
 
   return (
     <>

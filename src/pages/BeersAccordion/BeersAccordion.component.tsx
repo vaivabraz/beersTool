@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { useQuery } from "react-query";
-import { getBeers, BeerType } from "../../services";
+import { getBeers, BeerType, reactQueryKeys } from "../../services";
 import { Accordion } from "../../components";
 import { BeerAccordionItem } from "./BeerAccordionItem.component";
 
 export const BeersAccordion = () => {
   const [timestamp, setTimestamp] = useState<string>();
 
-  const { isLoading, data } = useQuery("beers", getBeers);
+  const { isLoading, data } = useQuery(reactQueryKeys.beersList, getBeers);
 
   return (
     <div>
