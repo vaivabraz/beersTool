@@ -5,11 +5,14 @@ type GridType<DataType> = {
   gridComponent: any;
 };
 //TODO: not correct type :/
-export function Grid<T>({ data, gridComponent: GridComponent }: GridType<T>) {
+export function Grid<T extends { id: number }>({
+  data,
+  gridComponent: GridComponent,
+}: GridType<T>) {
   return (
     <div className="Grid">
       {data.map((i) => (
-        <div className="GridItem">
+        <div key={i.id} className="GridItem">
           <GridComponent data={i} />
         </div>
       ))}

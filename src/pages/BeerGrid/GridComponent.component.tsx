@@ -9,7 +9,7 @@ export const GridComponent = ({ data }: { data: BeerType }) => {
         <div>
           <h3>{data.name}</h3>
           <h4>{data.tagline}</h4>
-          <p>{data.description}</p>
+          <p>Alcohol volume: {data.abv}</p>
         </div>
       </div>
     </div>
