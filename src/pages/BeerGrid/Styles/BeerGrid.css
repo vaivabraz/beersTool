@@ -1,19 +1,38 @@
 .BeerGridItem {
   padding: 12px;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  flex: 1;
   display: flex;
   overflow: auto;
+  background-color: #ece2d5;
+  border: 1px solid #d7c4b1;
 }
-
 .BeerGridItem h4 {
   font-style: italic;
 }
-
+.BeerGridItem img {
+  height: 300px;
+}
 .BeerGridItem .BeerGridItemRightColumn {
   padding-left: 12px;
 }
+
+.BeerGridItem:hover {
+  background-color: #e2c5b2;
+}
+
+.SortingContainer {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+.SortingContainer select {
+  padding: 6px 12px;
+  margin: 6px 0 6px 6px;
+}
+@media (max-width: 600px) {
+  .SortingContainer {
+    justify-content: center;
+  }
+}
+
 /*# sourceMappingURL=BeerGrid.css.map */

@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import { useQuery } from "react-query";
 import { Grid } from "../../components";
 import { BeerType, getBeers, reactQueryKeys } from "../../services";
@@ -16,7 +16,6 @@ export const BeerGrid = () => {
       ) : (
         data && (
           <>
-            <h3>Amazing selection of beers</h3>
             <SelectSorting updateData={setBeersList} data={data} />
             <Grid<BeerType>
               data={beersList || data}

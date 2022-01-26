@@ -1,15 +1,10 @@
-@use "../../../styles/globalStyles";
-
 .Grid {
   display: grid;
   gap: 16px;
   width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  padding: 0 24px;
   overflow: auto;
   .GridItem {
-    background-color: globalStyles.$background2;
-    height: 300px;
     display: flex;
   }
 }

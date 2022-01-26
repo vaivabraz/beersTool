@@ -1,13 +1,37 @@
+@use "../../../styles/globalStyles";
+
 .BeerGridItem {
   padding: 12px;
   flex: 1;
   display: flex;
   overflow: auto;
+  background-color: globalStyles.$background2;
+  border: 1px solid globalStyles.$border;
   h4 {
     font-style: italic;
   }
-
+  img {
+    height: 300px;
+  }
   .BeerGridItemRightColumn {
     padding-left: 12px;
+  }
+}
+
+.BeerGridItem:hover {
+  background-color: globalStyles.$active;
+}
+
+.SortingContainer {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  select {
+    padding: 6px 12px;
+    margin: 6px 0 6px 6px;
+  }
+
+  @media (max-width: 600px) {
+    justify-content: center;
   }
 }

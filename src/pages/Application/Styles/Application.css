@@ -1,11 +1,22 @@
-.applicationHeader {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.application {
   display: flex;
-  height: 60px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.applicationHeader {
+  display: flex;
+  height: 36px;
+  margin: 24px 0;
+  justify-content: center;
   gap: 12px;
 }
+.applicationHeader button {
+  background-color: #ece2d5;
+  border: 1px solid #d7c4b1;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=Application.css.map */

@@ -1,6 +1,22 @@
+@use "../../../styles/globalStyles";
+
+.application {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
 .applicationHeader {
   display: flex;
-  height: 60px;
+  height: 36px;
+  margin: 24px 0;
   justify-content: center;
   gap: 12px;
+  button {
+    background-color: globalStyles.$background2;
+    border: 1px solid globalStyles.$border;
+    border-radius: 12px;
+    cursor: pointer;
+  }
 }

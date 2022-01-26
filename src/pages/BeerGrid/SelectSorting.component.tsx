@@ -1,5 +1,6 @@
 import { useCallback } from "react";
 import { BeerType } from "../../services";
+import "./Styles/BeerGrid.css";
 
 type SelectSortingType = {
   data: BeerType[];
@@ -21,7 +22,8 @@ export const SelectSorting = ({ data, updateData }: SelectSortingType) => {
   }, []);
 
   return (
-    <div>
+    <div className="SortingContainer">
+      <p>Sort by </p>
       <select
         onChange={(event) => {
           //TODO: move values to constant
@@ -41,9 +43,9 @@ export const SelectSorting = ({ data, updateData }: SelectSortingType) => {
         }}
       >
         <option>-</option>
-        <option value="abv_ascend">Sort by alcohol volume (min-max)</option>
-        <option value="abv_descend">Sort by alcohol volume (max-min)</option>
-        <option value="name">Sort by name</option>
+        <option value="abv_ascend">Alcohol volume (min-max)</option>
+        <option value="abv_descend">Alcohol volume (max-min)</option>
+        <option value="name">Name</option>
       </select>
     </div>
   );

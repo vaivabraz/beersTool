@@ -3,7 +3,12 @@ import "./Styles/BeerGrid.css";
 
 export const GridComponent = ({ data }: { data: BeerType }) => {
   return (
-    <div className="BeerGridItem">
+    <button
+      onClick={() => {
+        console.log(`${data.name} was selected`);
+      }}
+      className="BeerGridItem"
+    >
       <img src={data.image_url} alt={data.name}></img>
       <div className="BeerGridItemRightColumn">
         <div>
@@ -12,6 +17,6 @@ export const GridComponent = ({ data }: { data: BeerType }) => {
           <p>Alcohol volume: {data.abv}</p>
         </div>
       </div>
-    </div>
+    </button>
   );
 };

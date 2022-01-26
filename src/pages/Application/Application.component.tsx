@@ -8,7 +8,7 @@ export const Application = () => {
   );
 
   return (
-    <div>
+    <div className="application">
       <div className="applicationHeader">
         <button onClick={() => setActivePage("BeerList")}>
           See the list of beers
@@ -17,6 +17,7 @@ export const Application = () => {
           See the grid of beers
         </button>
       </div>
+
       {activePage === "BeerGrid" && <BeerGrid />}
       {activePage === "BeerList" && <BeersAccordion />}
     </div>

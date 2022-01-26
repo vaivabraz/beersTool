@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,aAAa,CAAC;EACZ,OAAO,EAAE,IAAI;EACb,IAAI,EAAE,CAAC;EACP,OAAO,EAAE,IAAI;EACb,QAAQ,EAAE,IAAI;CAQf;;AAZD,AAKE,aALW,CAKX,EAAE,CAAC;EACD,UAAU,EAAE,MAAM;CACnB;;AAPH,AASE,aATW,CASX,wBAAwB,CAAC;EACvB,YAAY,EAAE,IAAI;CACnB",
-    "sources": [
-        "BeerGrid.scss"
-    ],
-    "names": [],
-    "file": "BeerGrid.css"
-}
+{"version":3,"sourceRoot":"","sources":["BeerGrid.scss","../../../styles/_globalStyles.scss"],"names":[],"mappings":"AAEA;EACE;EACA;EACA;EACA;EACA,kBCJY;EDKZ;;AACA;EACE;;AAEF;EACE;;AAEF;EACE;;;AAIJ;EACE,kBCrBO;;;ADwBT;EACE;EACA;EACA;;AACA;EACE;EACA;;AAGF;EATF;IAUI","file":"BeerGrid.css"}

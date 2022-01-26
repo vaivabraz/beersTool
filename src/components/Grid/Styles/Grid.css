@@ -3,12 +3,9 @@
   gap: 16px;
   width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  padding: 0 24px;
   overflow: auto;
 }
 .Grid .GridItem {
-  background-color: #ece2d5;
-  height: 300px;
   display: flex;
 }
 
