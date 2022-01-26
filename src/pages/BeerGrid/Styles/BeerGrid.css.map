@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,aAAa,CAAC;EACZ,OAAO,EAAE,IAAI;EACb,IAAI,EAAE,CAAC;EACP,OAAO,EAAE,IAAI;EACb,QAAQ,EAAE,IAAI;CAQf;;AAZD,AAKE,aALW,CAKX,EAAE,CAAC;EACD,UAAU,EAAE,MAAM;CACnB;;AAPH,AASE,aATW,CASX,wBAAwB,CAAC;EACvB,YAAY,EAAE,IAAI;CACnB",
+    "sources": [
+        "BeerGrid.scss"
+    ],
+    "names": [],
+    "file": "BeerGrid.css"
+}

@@ -1,0 +1,19 @@
+.BeerGridItem {
+  padding: 12px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: auto;
+}
+
+.BeerGridItem h4 {
+  font-style: italic;
+}
+
+.BeerGridItem .BeerGridItemRightColumn {
+  padding-left: 12px;
+}
+/*# sourceMappingURL=BeerGrid.css.map */

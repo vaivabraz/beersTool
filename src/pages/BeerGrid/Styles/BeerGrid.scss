@@ -1,0 +1,13 @@
+.BeerGridItem {
+  padding: 12px;
+  flex: 1;
+  display: flex;
+  overflow: auto;
+  h4 {
+    font-style: italic;
+  }
+
+  .BeerGridItemRightColumn {
+    padding-left: 12px;
+  }
+}
