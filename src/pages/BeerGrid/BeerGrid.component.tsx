@@ -3,16 +3,11 @@ import { useQuery } from "react-query";
 import { Grid } from "../../components";
 import { BeerType, getBeers, reactQueryKeys } from "../../services";
 import { GridComponent } from "./GridComponent.component";
+import { SelectSorting } from "./SelectSorting.component";
 
 export const BeerGrid = () => {
   const { isLoading, data } = useQuery(reactQueryKeys.beersList, getBeers);
-  const [beersList, setBeersList] = useState(data);
-
-  const sortBeersByAbv = useCallback((arrayToSort, ascending = true) => {
-    const order = ascending ? 1 : -1;
-    const sorted = [...arrayToSort]?.sort((a, b) => order * (a.abv - b.abv));
-    setBeersList(sorted);
-  }, []);
+  const [beersList, setBeersList] = useState<BeerType[]>();
 
   return (
     <>
@@ -22,12 +17,7 @@ export const BeerGrid = () => {
         data && (
           <>
             <h3>Amazing selection of beers</h3>
-            <button onClick={() => sortBeersByAbv(data)}>
-              Sort by alcohol volume (min-max)
-            </button>
-            <button onClick={() => sortBeersByAbv(data, false)}>
-              Sort by alcohol volume (max-min)
-            </button>
+            <SelectSorting updateData={setBeersList} data={data} />
             <Grid<BeerType>
               data={beersList || data}
               gridComponent={GridComponent}
