@@ -20,7 +20,7 @@ type BasicAccordionItemType = {
   name: string;
   description: string;
 };
-
+//TODO: accessibility!!!
 export function Accordion<T extends BasicAccordionItemType>({
   data,
   singleItemExpanded = false,
